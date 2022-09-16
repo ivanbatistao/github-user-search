@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
-
+import { AppContext } from '../context/AppContext';
 const ProtectedRoute = ({ children }) => {
-  const userNickname = true;
+  const { userNickname } = useContext(AppContext);
 
   if (userNickname) {
     return children;
