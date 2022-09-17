@@ -16,7 +16,6 @@ const UseInitialState = () => {
   };
 
   const setUserData = (userData) => {
-    console.log('UseInitialState', userData);
     setState({
       ...state,
       userNickname: userData.login,
