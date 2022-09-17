@@ -15,9 +15,20 @@ const ProtectedRoute = ({ children }) => {
 
           if (response.ok) {
             const userData = await response.json();
+
+            const repositoriesResponse = await fetch(userData.repos_url);
+
+            if (repositoriesResponse.ok) {
+              const repositories = await repositoriesResponse.json();
+              userData.repositories = repositories;
+            } else {
+              throw new Error('User Not Found');
+            }
+
             setUserData(userData);
-            console.log(userData);
             // window.localStorage.setItem('userNickname', userData.login);
+          } else {
+            throw new Error('User Not Found');
           }
         } catch (error) {
           console.error(error.message);
