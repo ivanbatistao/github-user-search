@@ -2,9 +2,18 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const Home = () => {
-  const state = useContext(AppContext);
-  console.log(state);
-  return <div>Home</div>;
+  const {
+    userData: { name },
+  } = useContext(AppContext);
+
+  return (
+    <main>
+      <div>
+        <p>Welcome</p>
+        <p>{name}</p>
+      </div>
+    </main>
+  );
 };
 
 export default Home;
