@@ -8,13 +8,6 @@ const initialState = {
 const UseInitialState = () => {
   const [state, setState] = useState(initialState);
 
-  const setUserNickname = (userNickname) => {
-    setState({
-      ...state,
-      userNickname,
-    });
-  };
-
   const setUserData = (userData) => {
     setState({
       ...state,
@@ -26,7 +19,6 @@ const UseInitialState = () => {
   return {
     userNickname: state.userNickname,
     userData: state.userData,
-    setUserNickname,
     setUserData,
   };
 };
