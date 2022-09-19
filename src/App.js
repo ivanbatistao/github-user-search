@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 import Home from './components/Home';
 import Login from './components/Login';
@@ -17,11 +17,16 @@ function App() {
               <ProtectedRoute>
                 <>
                   <NavBar isUserInfoPresent={true} />
-                  <Home />
+                  <Outlet />
                 </>
               </ProtectedRoute>
             }
-          />
+          >
+            <Route path='/' element={<Home />} />
+            <Route path='/info' element={<div>User Info</div>} />
+            <Route path='/repos' element={<div>Repos</div>} />
+          </Route>
+
           <Route
             path='/login'
             element={
