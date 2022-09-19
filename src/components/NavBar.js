@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, redirect, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 
-const NavBar = ({ isUserInfoPresent }) => {
+const NavBar = ({ isUserLoggedIn }) => {
   const { userData, setUserData } = useContext(AppContext);
   const [showLogout, setShowLogout] = useState(false);
 
@@ -33,7 +33,7 @@ const NavBar = ({ isUserInfoPresent }) => {
             alt='logo'
           ></img>
         </figure>
-        {isUserInfoPresent && (
+        {isUserLoggedIn && (
           <div>
             <ul>
               <li>

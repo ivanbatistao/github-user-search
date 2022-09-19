@@ -16,7 +16,7 @@ function App() {
             element={
               <ProtectedRoute>
                 <>
-                  <NavBar isUserInfoPresent={true} />
+                  <NavBar isUserLoggedIn={true} />
                   <Outlet />
                 </>
               </ProtectedRoute>
@@ -31,7 +31,7 @@ function App() {
             path='/login'
             element={
               <>
-                <NavBar isUserInfoPresent={false} />
+                <NavBar isUserLoggedIn={false} />
                 <Login />
               </>
             }
