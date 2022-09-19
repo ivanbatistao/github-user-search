@@ -3,14 +3,14 @@ import { AppContext } from '../context/AppContext';
 
 const Home = () => {
   const {
-    userData: { name },
+    userData: { name, login },
   } = useContext(AppContext);
 
   return (
     <main>
       <div>
         <p>Welcome</p>
-        <p>{name}</p>
+        <p>{name || login}</p>
       </div>
     </main>
   );
