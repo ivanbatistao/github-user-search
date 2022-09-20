@@ -62,7 +62,7 @@ const UserInfo = () => {
           {numberOfInternalRepos && (
             <>
               <div>
-                <h3>Public repos</h3>
+                <h3>Internal repos</h3>
                 <p> {numberOfInternalRepos}</p>
               </div>
             </>
