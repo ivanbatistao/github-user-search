@@ -5,6 +5,7 @@ import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import NotFound from './components/NotFound';
 import NavBar from './components/NavBar';
+import UserInfo from './components/UserInfo';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
             }
           >
             <Route path='/' element={<Home />} />
-            <Route path='/info' element={<div>User Info</div>} />
+            <Route path='/info' element={<UserInfo />} />
             <Route path='/repos' element={<div>Repos</div>} />
           </Route>
 
