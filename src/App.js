@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
-import Home from './components/Home';
+import Welcome from './components/Welcome';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import NotFound from './components/NotFound';
@@ -23,7 +23,7 @@ function App() {
               </ProtectedRoute>
             }
           >
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Welcome />} />
             <Route path='/info' element={<UserInfo />} />
             <Route path='/repos' element={<div>Repos</div>} />
           </Route>
